@@ -4,7 +4,7 @@ add_library('controlP5')
 
 def setup():
     
-    cp5 = controlP5(this)
+    cp5 = ControlP5(this)
     global slider1
     size(400,400)
     global img 
