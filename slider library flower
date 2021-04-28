@@ -1,0 +1,36 @@
+steps = 4
+
+add_library('controlP5')
+
+def setup():
+    
+    cp5 = controlP5(this)
+    global slider1
+    size(400,400)
+    global img 
+    img = loadImage("flower.jpg")
+    
+    slider1 = cp5.addSlider('slider 1')
+    slider1.setPosition(10,10)
+    slider1.setSize(200,20)
+    slider1.setRange(0,25)
+    slider1.setValue(10)
+    
+
+def draw():
+    background(0)
+    img.loadPixels()
+    
+    steps = int(slider1.value)
+    
+    for x in range(0, 400, steps):
+        for y in range(0, 400, steps):
+            loc = x + y * img.width #positie
+            c = img.pixels[loc]
+            
+            fill(c)
+            ellipse(x,y,5,5)
+            
+    
+    
+               
